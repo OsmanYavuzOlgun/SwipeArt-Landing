@@ -50,7 +50,7 @@ body.dark-theme {
   --first-color-send: #161212;
   --title-color: #f3f1f1;
   --text-color: #d1c7c8;
-  --body-color: #171515;
+  --body-color: #0e0d0d;
   --container-color: #302728;
 
   .home {
@@ -60,6 +60,13 @@ body.dark-theme {
       }
       #button {
         fill: #1f1c1c;
+      }
+    }
+  }
+  .freuqently {
+    .accordion {
+      button {
+        color: white;
       }
     }
   }
@@ -182,14 +189,14 @@ img {
   }
   &__logo {
     &:hover {
-      color: var(--first-color);
+      color: #7f8cc6;
     }
   }
   &__link {
     transition: 0.3s;
 
     &:hover {
-      color: var(--first-color);
+      color: #7f8cc6;
     }
   }
   &__toggle {
@@ -233,7 +240,7 @@ img {
   justify-content: center;
   align-items: center;
   padding: 0.3rem;
-  background: rgba(218, 37, 53, 0.5);
+  background: #2b45bb;
   border-radius: 0.4rem;
   z-index: var(--z-tooltip);
   transition: 0.4s;
@@ -267,6 +274,9 @@ img {
     .phone-icon-wrapper {
       display: flex;
       justify-content: center;
+      #phone-icon {
+        max-width: 320px;
+      }
     }
     .svg-text-anim {
       animation: svg-text-anim 2s linear;
@@ -350,8 +360,10 @@ img {
   }
 }
 
-/*========== SHARE ==========*/
 .share {
+  .about-us {
+    max-width: 380px;
+  }
   &__data {
     text-align: center;
   }
@@ -364,7 +376,6 @@ img {
   }
 }
 
-/*========== DECORATION ==========*/
 .decoration {
   &__container {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -381,71 +392,24 @@ img {
     }
   }
   &__img {
-    width: 180px;
+    height: 180px;
+    padding: 16px;
   }
   &__title {
     font-size: var(--h3-font-size);
-    margin-bottom: var(--mb-1);
-  }
-}
-
-/*========== ACCESSORIES ==========*/
-.accessory {
-  &__container {
-    grid-template-columns: repeat(2, 1fr);
-    padding-bottom: 2rem;
-  }
-  &__content {
-    position: relative;
-    display: grid;
-    padding: 0.25rem 0.75rem 0.75rem;
-    background-color: var(--container-color);
-    box-shadow: 0 2px 6px rgba(65, 11, 16, 0.15);
-    border-radius: 1rem;
-
-    &:hover {
-      box-shadow: 0 3px 12px rgba(65, 11, 16, 0.15);
-    }
-  }
-  &__img {
-    width: 110px;
-    justify-self: center;
-    margin-bottom: 0.25rem;
-  }
-  &__title,
-  &__category {
-    text-align: center;
-  }
-  &__title {
-    font-size: var(--normal-font-size);
-  }
-  &__category {
-    font-size: var(--small-font-size);
-    margin-bottom: var(--mb-1);
-    color: var(--text-color-light);
-  }
-  &__preci {
-    font-weight: var(--font-semi-bold);
-    color: var(--title-color);
-  }
-  &__button {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    font-size: 1.25rem;
-    padding: 0.5rem 0.625rem;
-    border-radius: 1rem 0 1rem 0;
+    margin: 12px 0 12px 0;
   }
 }
 
 /*========== SEND GIFT ==========*/
 .send {
-  background-color: var(--first-color-send);
-
+  &__container {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    background-color: transparent !important;
+  }
   &__title,
   &__description {
-    color: #fff;
+    color: var(--text-color);
   }
   &__description {
     text-align: center;
@@ -454,8 +418,7 @@ img {
   &__direction {
     display: flex;
     justify-content: space-between;
-    background-color: #fff;
-    padding: 0.5rem;
+    background-color: transparent;
     border-radius: 0.5rem;
   }
   &__input {
@@ -485,6 +448,9 @@ img {
   }
   &__title {
     margin-bottom: var(--mb-2);
+  }
+  &__content {
+    margin: 0 auto;
   }
   &__logo,
   &__title {
@@ -632,6 +598,111 @@ img {
   }
 }
 
+.freuqently {
+  font-family: var(--body-font);
+  .faq-title {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .link-contact {
+    text-decoration: underline;
+    color: #2b45bb;
+  }
+  .accordion {
+    .accordion-item {
+      border-bottom: 1px solid lightgray;
+      button[aria-expanded="true"] {
+        border-bottom: 1px solid #2b45bb;
+      }
+    }
+    button {
+      position: relative;
+      display: block;
+      text-align: left;
+      width: 100%;
+      padding: 1em 0;
+      color: black;
+      font-size: 1.15rem;
+      font-weight: 400;
+      border: none;
+      background: none;
+      outline: none;
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        color: #2b45bb;
+        &::after {
+          cursor: pointer;
+          color: #2b45bb;
+          border: 1px solid #2b45bb;
+        }
+      }
+      .accordion-title {
+        padding: 1em 1.5em 1em 0;
+        color: var(--text-color);
+        font-weight: 600;
+        font-family: var(--body-font);
+      }
+      .icon {
+        display: inline-block;
+        position: absolute;
+        top: 18px;
+        right: 0;
+        width: 22px;
+        height: 22px;
+        border: 1px solid;
+        border-radius: 22px;
+        &::before {
+          display: block;
+          position: absolute;
+          content: "";
+          top: 9px;
+          left: 5px;
+          width: 10px;
+          height: 2px;
+          background: currentColor;
+        }
+        &::after {
+          display: block;
+          position: absolute;
+          content: "";
+          top: 5px;
+          left: 9px;
+          width: 2px;
+          height: 10px;
+          background: currentColor;
+        }
+      }
+    }
+    button[aria-expanded="true"] {
+      color: blue;
+      .icon {
+        &::after {
+          width: 0;
+        }
+      }
+      + .accordion-content {
+        opacity: 1;
+        max-height: 9em;
+        transition: all 200ms linear;
+        will-change: opacity, max-height;
+      }
+    }
+    .accordion-content {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 200ms linear, max-height 200ms linear;
+      will-change: opacity, max-height;
+      p {
+        font-size: 1rem;
+        font-weight: 300;
+        margin: 2em 0;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 968px) {
   .bd-container {
     margin-left: auto;
@@ -639,8 +710,7 @@ img {
   }
 
   .home__img,
-  .share__img,
-  .send__img {
+  .share__img {
     width: 469px;
   }
 

@@ -51,7 +51,7 @@ body.dark-theme {
   --first-color-send: #161212;
   --title-color: #f3f1f1;
   --text-color: #d1c7c8;
-  --body-color: #171515;
+  --body-color: #0e0d0d;
   --container-color: #302728;
 }
 body.dark-theme .home__img #background-circle {
@@ -59,6 +59,9 @@ body.dark-theme .home__img #background-circle {
 }
 body.dark-theme .home__img #button {
   fill: #1f1c1c;
+}
+body.dark-theme .freuqently .accordion button {
+  color: white;
 }
 
 .change-theme {
@@ -177,13 +180,13 @@ img {
   font-weight: var(--font-semi-bold);
 }
 .nav__logo:hover {
-  color: var(--first-color);
+  color: #7f8cc6;
 }
 .nav__link {
   transition: 0.3s;
 }
 .nav__link:hover {
-  color: var(--first-color);
+  color: #7f8cc6;
 }
 .nav__toggle {
   font-size: 1.3rem;
@@ -224,7 +227,7 @@ img {
   justify-content: center;
   align-items: center;
   padding: 0.3rem;
-  background: rgba(218, 37, 53, 0.5);
+  background: #2b45bb;
   border-radius: 0.4rem;
   z-index: var(--z-tooltip);
   transition: 0.4s;
@@ -254,6 +257,9 @@ img {
 .home__img .phone-icon-wrapper {
   display: flex;
   justify-content: center;
+}
+.home__img .phone-icon-wrapper #phone-icon {
+  max-width: 320px;
 }
 .home__img .svg-text-anim {
   animation: svg-text-anim 2s linear;
@@ -326,7 +332,9 @@ img {
   color: var(--first-color-alt);
 }
 
-/*========== SHARE ==========*/
+.share .about-us {
+  max-width: 380px;
+}
 .share__data {
   text-align: center;
 }
@@ -338,7 +346,6 @@ img {
   justify-self: center;
 }
 
-/*========== DECORATION ==========*/
 .decoration__container {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
@@ -353,65 +360,21 @@ img {
   box-shadow: 0 3px 12px rgba(65, 11, 16, 0.15);
 }
 .decoration__img {
-  width: 180px;
+  height: 180px;
+  padding: 16px;
 }
 .decoration__title {
   font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-1);
-}
-
-/*========== ACCESSORIES ==========*/
-.accessory__container {
-  grid-template-columns: repeat(2, 1fr);
-  padding-bottom: 2rem;
-}
-.accessory__content {
-  position: relative;
-  display: grid;
-  padding: 0.25rem 0.75rem 0.75rem;
-  background-color: var(--container-color);
-  box-shadow: 0 2px 6px rgba(65, 11, 16, 0.15);
-  border-radius: 1rem;
-}
-.accessory__content:hover {
-  box-shadow: 0 3px 12px rgba(65, 11, 16, 0.15);
-}
-.accessory__img {
-  width: 110px;
-  justify-self: center;
-  margin-bottom: 0.25rem;
-}
-.accessory__title, .accessory__category {
-  text-align: center;
-}
-.accessory__title {
-  font-size: var(--normal-font-size);
-}
-.accessory__category {
-  font-size: var(--small-font-size);
-  margin-bottom: var(--mb-1);
-  color: var(--text-color-light);
-}
-.accessory__preci {
-  font-weight: var(--font-semi-bold);
-  color: var(--title-color);
-}
-.accessory__button {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  font-size: 1.25rem;
-  padding: 0.5rem 0.625rem;
-  border-radius: 1rem 0 1rem 0;
+  margin: 12px 0 12px 0;
 }
 
 /*========== SEND GIFT ==========*/
-.send {
-  background-color: var(--first-color-send);
+.send__container {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  background-color: transparent !important;
 }
 .send__title, .send__description {
-  color: #fff;
+  color: var(--text-color);
 }
 .send__description {
   text-align: center;
@@ -420,8 +383,7 @@ img {
 .send__direction {
   display: flex;
   justify-content: space-between;
-  background-color: #fff;
-  padding: 0.5rem;
+  background-color: transparent;
   border-radius: 0.5rem;
 }
 .send__input {
@@ -451,6 +413,9 @@ img {
 }
 .footer__title {
   margin-bottom: var(--mb-2);
+}
+.footer__content {
+  margin: 0 auto;
 }
 .footer__logo, .footer__title {
   font-size: var(--h3-font-size);
@@ -574,14 +539,113 @@ img {
     border-radius: 1.5rem;
   }
 }
+.freuqently {
+  font-family: var(--body-font);
+}
+.freuqently .faq-title {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.freuqently .link-contact {
+  text-decoration: underline;
+  color: #2b45bb;
+}
+.freuqently .accordion .accordion-item {
+  border-bottom: 1px solid lightgray;
+}
+.freuqently .accordion .accordion-item button[aria-expanded=true] {
+  border-bottom: 1px solid #2b45bb;
+}
+.freuqently .accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: black;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+.freuqently .accordion button:hover, .freuqently .accordion button:focus {
+  cursor: pointer;
+  color: #2b45bb;
+}
+.freuqently .accordion button:hover::after, .freuqently .accordion button:focus::after {
+  cursor: pointer;
+  color: #2b45bb;
+  border: 1px solid #2b45bb;
+}
+.freuqently .accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+  color: var(--text-color);
+  font-weight: 600;
+  font-family: var(--body-font);
+}
+.freuqently .accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+.freuqently .accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.freuqently .accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.freuqently .accordion button[aria-expanded=true] {
+  color: blue;
+}
+.freuqently .accordion button[aria-expanded=true] .icon::after {
+  width: 0;
+}
+.freuqently .accordion button[aria-expanded=true] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.freuqently .accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.freuqently .accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2em 0;
+}
+
 @media screen and (min-width: 968px) {
   .bd-container {
     margin-left: auto;
     margin-right: auto;
   }
   .home__img,
-  .share__img,
-  .send__img {
+  .share__img {
     width: 469px;
   }
   .home__container,
