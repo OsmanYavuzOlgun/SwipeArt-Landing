@@ -1,0 +1,22 @@
+<div class="phone-icon-wrapper" id="activateAnim">
+                <div class="phone-icon-wrapper">
+                    <svg version="1.1" id="phone-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                       width="263.001px" height="263px" viewBox="0 0 263.001 263" enable-background="new 0 0 263.001 263" xml:space="preserve">
+                    <circle id="background-circle" fill="#1F1C1C" cx="131.5" cy="131.5" r="131.5"/>
+                    <rect id="screen" x="74.489" y="60.891" fill="#2f3580"  stroke="#7F8CC6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="114.021" height="142.4"/>
+                    <g id="phone">
+                      <path fill="none" stroke="#7F8CC6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+                        M188.511,215.417c0,7.94-6.496,14.437-14.436,14.437h-85.15c-7.94,0-14.436-6.496-14.436-14.437V47.581
+                        c0-7.94,6.496-14.436,14.436-14.436h85.15c7.939,0,14.436,6.496,14.436,14.436V215.417z"/>
+                    </g>
+                    <circle id="button" fill="#1F1C1C" cx="131.5" cy="216.735" r="7.362"/>
+                    <line id="speaker" fill="none" stroke="#7F8CC6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="111.037" y1="47.201" x2="151.964" y2="47.201"/>
+                  
+                    <line id="shadow-line-screen-long" fill="none" stroke="#7F8CC6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="87.517" y1="139.788" x2="87.517" y2="168.286"/>
+                    <line id="shadow-line-screen-short" fill="none"  stroke="#7F8CC6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="87.517" y1="179.5" x2="87.517" y2="187"/>
+                    <line id="line-bottom-dark" fill="none" stroke="#7F8CC6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="10.006" y1="229.854" x2="252.995" y2="229.854"/>
+                    <line id="shadow-line-bottom-long" fill="none"  stroke="#7F8CC6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="231.343" y1="244.391" x2="149.794" y2="244.391"/>
+                    <line id="shadow-line-bottom-short" fill="none"  stroke="#7F8CC6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="129.702" y1="244.391" x2="108.24" y2="244.391"/>
+                    </svg>
+                  </div>
+            </div>
