@@ -122,7 +122,6 @@ img {
   margin-bottom: var(--mb-3);
 }
 
-/*========== LAYOUT ==========*/
 .l-main {
   overflow: hidden;
 }
@@ -148,7 +147,6 @@ img {
   background-color: var(--body-color);
 }
 
-/*========== NAV ==========*/
 .nav {
   height: var(--header-height);
   display: flex;
@@ -193,12 +191,10 @@ img {
   cursor: pointer;
 }
 
-/* Show menu */
 .show-menu {
   top: calc(var(--header-height) + 1rem);
 }
 
-/* Active menu link */
 .active-link {
   position: relative;
 }
@@ -213,12 +209,111 @@ img {
   border-radius: 50%;
 }
 
-/* Change background header */
 .scroll-header {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Scroll top */
+.freuqently {
+  font-family: var(--body-font);
+}
+.freuqently .faq-title {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.freuqently .link-contact {
+  text-decoration: underline;
+  color: #2b45bb;
+}
+.freuqently .accordion .accordion-item {
+  border-bottom: 1px solid lightgray;
+}
+.freuqently .accordion .accordion-item button[aria-expanded=true] {
+  border-bottom: 1px solid #2b45bb;
+}
+.freuqently .accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: black;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+.freuqently .accordion button:hover, .freuqently .accordion button:focus {
+  cursor: pointer;
+  color: #2b45bb;
+}
+.freuqently .accordion button:hover::after, .freuqently .accordion button:focus::after {
+  cursor: pointer;
+  color: #2b45bb;
+  border: 1px solid #2b45bb;
+}
+.freuqently .accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+  color: var(--text-color);
+  font-weight: 600;
+  font-family: var(--body-font);
+  display: flex;
+}
+.freuqently .accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+.freuqently .accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.freuqently .accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.freuqently .accordion button[aria-expanded=true] {
+  color: blue;
+}
+.freuqently .accordion button[aria-expanded=true] .icon::after {
+  width: 0;
+}
+.freuqently .accordion button[aria-expanded=true] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.freuqently .accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.freuqently .accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2em 0;
+}
+
 .scrolltop {
   position: fixed;
   right: 1rem;
@@ -246,7 +341,6 @@ img {
   bottom: 1.5rem;
 }
 
-/*========== HOME ==========*/
 .home__container {
   row-gap: 0.5rem;
 }
@@ -260,6 +354,7 @@ img {
 }
 .home__img .phone-icon-wrapper #phone-icon {
   max-width: 320px;
+  width: 100%;
 }
 .home__img .svg-text-anim {
   animation: svg-text-anim 2s linear;
@@ -309,7 +404,6 @@ img {
   margin-bottom: var(--mb-3);
 }
 
-/*========== BUTTONS ==========*/
 .button {
   display: inline-block;
   background-color: #2b45bb;
@@ -368,7 +462,6 @@ img {
   margin: 12px 0 12px 0;
 }
 
-/*========== SEND GIFT ==========*/
 .send__container {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   background-color: transparent !important;
@@ -404,7 +497,6 @@ img {
   justify-self: center;
 }
 
-/*========== FOOTER ==========*/
 .footer__container {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
@@ -443,13 +535,42 @@ img {
   margin-top: 4rem;
 }
 
-/*========== MEDIA QUERIES ==========*/
-/* For full-screen images on small screens */
+@keyframes svg-text-anim {
+  40% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  60% {
+    stroke-dashoffset: 0;
+    fill: #000000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #000000;
+  }
+}
+@keyframes svg-text-anim {
+  40% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  60% {
+    stroke-dashoffset: 0;
+    fill: #000000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #000000;
+  }
+}
 @media screen and (max-width: 359px) {
   .home__img,
   .share__img,
   .send__img {
     width: 100%;
+  }
+  .footer__container {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   }
 }
 @media screen and (min-width: 576px) {
@@ -471,12 +592,64 @@ img {
     text-align: initial;
   }
   .home__img,
-  .share__img,
-  .send__img {
+  .share__img {
     width: 100%;
   }
   .share__img {
     order: -1;
+  }
+}
+@media screen and (max-width: 768px) {
+  section {
+    padding: 4rem;
+  }
+  .container-resp {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .share .container-resp {
+    flex-direction: column;
+  }
+  .share .share__container .share__data .section-title-center {
+    text-align: center;
+  }
+  .share .share__container .share__data .share__description {
+    text-align: center;
+  }
+  .container-resp-neat {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+  }
+  p {
+    max-width: 512px;
+  }
+  .about-us {
+    width: 100%;
+  }
+  .send .send__container .send__content .section-title-center {
+    text-align: center;
+  }
+  .send .send__container .send__content .send__description {
+    text-align: center;
+  }
+  .send__container {
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+  }
+  .send__container .button {
+    margin: 0 auto;
+  }
+  .accordion-content {
+    text-align: left;
   }
 }
 @media screen and (min-width: 768px) {
@@ -539,106 +712,6 @@ img {
     border-radius: 1.5rem;
   }
 }
-.freuqently {
-  font-family: var(--body-font);
-}
-.freuqently .faq-title {
-  text-align: center;
-  margin-bottom: 48px;
-}
-.freuqently .link-contact {
-  text-decoration: underline;
-  color: #2b45bb;
-}
-.freuqently .accordion .accordion-item {
-  border-bottom: 1px solid lightgray;
-}
-.freuqently .accordion .accordion-item button[aria-expanded=true] {
-  border-bottom: 1px solid #2b45bb;
-}
-.freuqently .accordion button {
-  position: relative;
-  display: block;
-  text-align: left;
-  width: 100%;
-  padding: 1em 0;
-  color: black;
-  font-size: 1.15rem;
-  font-weight: 400;
-  border: none;
-  background: none;
-  outline: none;
-}
-.freuqently .accordion button:hover, .freuqently .accordion button:focus {
-  cursor: pointer;
-  color: #2b45bb;
-}
-.freuqently .accordion button:hover::after, .freuqently .accordion button:focus::after {
-  cursor: pointer;
-  color: #2b45bb;
-  border: 1px solid #2b45bb;
-}
-.freuqently .accordion button .accordion-title {
-  padding: 1em 1.5em 1em 0;
-  color: var(--text-color);
-  font-weight: 600;
-  font-family: var(--body-font);
-}
-.freuqently .accordion button .icon {
-  display: inline-block;
-  position: absolute;
-  top: 18px;
-  right: 0;
-  width: 22px;
-  height: 22px;
-  border: 1px solid;
-  border-radius: 22px;
-}
-.freuqently .accordion button .icon::before {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 9px;
-  left: 5px;
-  width: 10px;
-  height: 2px;
-  background: currentColor;
-}
-.freuqently .accordion button .icon::after {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 5px;
-  left: 9px;
-  width: 2px;
-  height: 10px;
-  background: currentColor;
-}
-.freuqently .accordion button[aria-expanded=true] {
-  color: blue;
-}
-.freuqently .accordion button[aria-expanded=true] .icon::after {
-  width: 0;
-}
-.freuqently .accordion button[aria-expanded=true] + .accordion-content {
-  opacity: 1;
-  max-height: 9em;
-  transition: all 200ms linear;
-  will-change: opacity, max-height;
-}
-.freuqently .accordion .accordion-content {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 200ms linear, max-height 200ms linear;
-  will-change: opacity, max-height;
-}
-.freuqently .accordion .accordion-content p {
-  font-size: 1rem;
-  font-weight: 300;
-  margin: 2em 0;
-}
-
 @media screen and (min-width: 968px) {
   .bd-container {
     margin-left: auto;
@@ -653,34 +726,5 @@ img {
   .send__container {
     -moz-column-gap: 5rem;
          column-gap: 5rem;
-  }
-}
-@keyframes svg-text-anim {
-  40% {
-    stroke-dashoffset: 0;
-    fill: transparent;
-  }
-  60% {
-    stroke-dashoffset: 0;
-    fill: #000000;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    fill: #000000;
-  }
-}
-/* Most browsers */
-@keyframes svg-text-anim {
-  40% {
-    stroke-dashoffset: 0;
-    fill: transparent;
-  }
-  60% {
-    stroke-dashoffset: 0;
-    fill: #000000;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    fill: #000000;
   }
 }/*# sourceMappingURL=styles.css.map */
