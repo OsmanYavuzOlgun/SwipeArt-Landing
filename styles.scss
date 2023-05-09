@@ -3,7 +3,6 @@
 
 :root {
   --header-height: 3rem;
-
   --first-color: #da2535;
   --first-color-alt: #c42130;
   --first-color-send: #de3b49;
@@ -129,7 +128,6 @@ img {
   }
 }
 
-/*========== LAYOUT ==========*/
 .l-main {
   overflow: hidden;
 }
@@ -154,7 +152,6 @@ img {
   background-color: var(--body-color);
 }
 
-/*========== NAV ==========*/
 .nav {
   height: var(--header-height);
   display: flex;
@@ -205,12 +202,10 @@ img {
   }
 }
 
-/* Show menu */
 .show-menu {
   top: calc(var(--header-height) + 1rem);
 }
 
-/* Active menu link */
 .active-link {
   position: relative;
 
@@ -226,12 +221,116 @@ img {
   }
 }
 
-/* Change background header */
 .scroll-header {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Scroll top */
+.freuqently {
+  font-family: var(--body-font);
+  .faq-title {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .link-contact {
+    text-decoration: underline;
+    color: #2b45bb;
+  }
+  .accordion {
+    .accordion-item {
+      border-bottom: 1px solid lightgray;
+      button[aria-expanded="true"] {
+        border-bottom: 1px solid #2b45bb;
+      }
+    }
+    button {
+      position: relative;
+      display: block;
+      text-align: left;
+      width: 100%;
+      padding: 1em 0;
+      color: black;
+      font-size: 1.15rem;
+      font-weight: 400;
+      border: none;
+      background: none;
+      outline: none;
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        color: #2b45bb;
+        &::after {
+          cursor: pointer;
+          color: #2b45bb;
+          border: 1px solid #2b45bb;
+        }
+      }
+      .accordion-title {
+        padding: 1em 1.5em 1em 0;
+        color: var(--text-color);
+        font-weight: 600;
+        font-family: var(--body-font);
+        display: flex;
+      }
+      .icon {
+        display: inline-block;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        width: 22px;
+        height: 22px;
+        border: 1px solid;
+        border-radius: 22px;
+        &::before {
+          display: block;
+          position: absolute;
+          content: "";
+          top: 9px;
+          left: 5px;
+          width: 10px;
+          height: 2px;
+          background: currentColor;
+        }
+        &::after {
+          display: block;
+          position: absolute;
+          content: "";
+          top: 5px;
+          left: 9px;
+          width: 2px;
+          height: 10px;
+          background: currentColor;
+        }
+      }
+    }
+    button[aria-expanded="true"] {
+      color: blue;
+      .icon {
+        &::after {
+          width: 0;
+        }
+      }
+      + .accordion-content {
+        opacity: 1;
+        max-height: 9em;
+        transition: all 200ms linear;
+        will-change: opacity, max-height;
+      }
+    }
+    .accordion-content {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 200ms linear, max-height 200ms linear;
+      will-change: opacity, max-height;
+      p {
+        font-size: 1rem;
+        font-weight: 300;
+        margin: 2em 0;
+      }
+    }
+  }
+}
+
 .scrolltop {
   position: fixed;
   right: 1rem;
@@ -261,7 +360,6 @@ img {
   bottom: 1.5rem;
 }
 
-/*========== HOME ==========*/
 .home {
   &__container {
     row-gap: 0.5rem;
@@ -276,6 +374,7 @@ img {
       justify-content: center;
       #phone-icon {
         max-width: 320px;
+        width: 100%;
       }
     }
     .svg-text-anim {
@@ -334,7 +433,6 @@ img {
   }
 }
 
-/*========== BUTTONS ==========*/
 .button {
   display: inline-block;
   background-color: #2b45bb;
@@ -401,7 +499,6 @@ img {
   }
 }
 
-/*========== SEND GIFT ==========*/
 .send {
   &__container {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
@@ -438,7 +535,6 @@ img {
   }
 }
 
-/*========== FOOTER ==========*/
 .footer {
   &__container {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -482,245 +578,6 @@ img {
   }
 }
 
-/*========== MEDIA QUERIES ==========*/
-/* For full-screen images on small screens */
-@media screen and (max-width: 359px) {
-  .home__img,
-  .share__img,
-  .send__img {
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .home__container,
-  .share__container,
-  .send__container {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-  }
-
-  .home {
-    &__container {
-      padding: 5rem 0 0;
-    }
-    &__img {
-      order: 1;
-    }
-  }
-
-  .section-title-center,
-  .share__data,
-  .send__description {
-    text-align: initial;
-  }
-
-  .home__img,
-  .share__img,
-  .send__img {
-    width: 100%;
-  }
-
-  .share__img {
-    order: -1;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  body {
-    margin: 0;
-  }
-
-  .section {
-    padding-top: 7rem;
-  }
-
-  .nav {
-    height: calc(var(--header-height) + 1.5rem);
-    &__logo {
-      font-size: 28px;
-    }
-    &__list {
-      display: flex;
-      align-items: center;
-    }
-    &__item {
-      margin-left: var(--mb-5);
-      margin-bottom: 0;
-    }
-    &__toggle {
-      display: none;
-    }
-  }
-
-  .change-theme {
-    position: initial;
-    margin-left: var(--mb-4);
-  }
-
-  .home__container {
-    padding: 7rem 2rem 0;
-  }
-
-  .share__container {
-    padding: 0 2rem;
-  }
-
-  .accessory {
-    &__container {
-      grid-template-columns: repeat(3, 224px);
-      justify-content: center;
-    }
-    &__content {
-      padding: 0.5rem 1.5rem 1.5rem;
-    }
-    &__img {
-      width: 120px;
-      margin-bottom: var(--mb-1);
-    }
-    &__title,
-    &__category {
-      text-align: initial;
-    }
-    &__button {
-      padding: 0.75rem;
-    }
-  }
-
-  .send {
-    background: none;
-
-    &__container {
-      background-color: var(--first-color-send);
-      padding: 2rem;
-      border-radius: 1.5rem;
-    }
-  }
-}
-
-.freuqently {
-  font-family: var(--body-font);
-  .faq-title {
-    text-align: center;
-    margin-bottom: 48px;
-  }
-  .link-contact {
-    text-decoration: underline;
-    color: #2b45bb;
-  }
-  .accordion {
-    .accordion-item {
-      border-bottom: 1px solid lightgray;
-      button[aria-expanded="true"] {
-        border-bottom: 1px solid #2b45bb;
-      }
-    }
-    button {
-      position: relative;
-      display: block;
-      text-align: left;
-      width: 100%;
-      padding: 1em 0;
-      color: black;
-      font-size: 1.15rem;
-      font-weight: 400;
-      border: none;
-      background: none;
-      outline: none;
-      &:hover,
-      &:focus {
-        cursor: pointer;
-        color: #2b45bb;
-        &::after {
-          cursor: pointer;
-          color: #2b45bb;
-          border: 1px solid #2b45bb;
-        }
-      }
-      .accordion-title {
-        padding: 1em 1.5em 1em 0;
-        color: var(--text-color);
-        font-weight: 600;
-        font-family: var(--body-font);
-      }
-      .icon {
-        display: inline-block;
-        position: absolute;
-        top: 18px;
-        right: 0;
-        width: 22px;
-        height: 22px;
-        border: 1px solid;
-        border-radius: 22px;
-        &::before {
-          display: block;
-          position: absolute;
-          content: "";
-          top: 9px;
-          left: 5px;
-          width: 10px;
-          height: 2px;
-          background: currentColor;
-        }
-        &::after {
-          display: block;
-          position: absolute;
-          content: "";
-          top: 5px;
-          left: 9px;
-          width: 2px;
-          height: 10px;
-          background: currentColor;
-        }
-      }
-    }
-    button[aria-expanded="true"] {
-      color: blue;
-      .icon {
-        &::after {
-          width: 0;
-        }
-      }
-      + .accordion-content {
-        opacity: 1;
-        max-height: 9em;
-        transition: all 200ms linear;
-        will-change: opacity, max-height;
-      }
-    }
-    .accordion-content {
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: opacity 200ms linear, max-height 200ms linear;
-      will-change: opacity, max-height;
-      p {
-        font-size: 1rem;
-        font-weight: 300;
-        margin: 2em 0;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 968px) {
-  .bd-container {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .home__img,
-  .share__img {
-    width: 469px;
-  }
-
-  .home__container,
-  .share__container,
-  .send__container {
-    column-gap: 5rem;
-  }
-}
-
 @keyframes svg-text-anim {
   40% {
     stroke-dashoffset: 0;
@@ -735,7 +592,6 @@ img {
     fill: #000000;
   }
 }
-/* Most browsers */
 @keyframes svg-text-anim {
   40% {
     stroke-dashoffset: 0;
@@ -751,4 +607,4 @@ img {
   }
 }
 
-//svg-animation
+@import "responsive";
